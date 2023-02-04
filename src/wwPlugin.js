@@ -28,7 +28,7 @@ export default {
         if (collection.mode === 'dynamic') {
             try {
                 const index = this.client.initIndex(collection.config.index);
-                const { hits: data, nbHits: total } = await index.search(collection.config.search, {
+                const { data, nbHits: total } = await index.search(collection.config.search, {
                     offset: collection.offset || 0,
                     length: collection.limit || 20,
                 });
